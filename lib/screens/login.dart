@@ -53,15 +53,17 @@ class _AuthpageState extends State<AuthPage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Container(
-          height: 140,
-          width: 140,
-          child: Image.asset("assets/logo.png"),
-        ),
-        Container(
           margin: EdgeInsets.only(bottom: 50),
-          child: Text(
-            'Music-Demo',
-            style: TextStyle(fontSize: 35, color: Colors.white),
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                'SIGN IN ',
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 35, color: Colors.white),
+              ),
+            ),
           ),
         ),
         Container(
@@ -125,19 +127,43 @@ class _AuthpageState extends State<AuthPage> {
         SizedBox(
           height: 25,
         ),
-        FlatButton(
-          shape: new RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              side: BorderSide(color: Colors.white)),
-          padding: EdgeInsets.only(left: 50, right: 50),
-          textColor: Colors.white,
-          child: Text('Login'),
-          onPressed: () {
-            _sendToServer();
-          },
+        Container(
+          height: 45,
+          width: MediaQuery.of(context).size.width * 0.60,
+          child: FlatButton(
+            color: Colors.pinkAccent,
+            shape: new RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                side: BorderSide(color: Colors.pinkAccent)),
+            padding: EdgeInsets.only(left: 50, right: 50),
+            textColor: Colors.white,
+            child: Text('SIGN IN'),
+            onPressed: () {
+              _sendToServer();
+            },
+          ),
         ),
         SizedBox(
-          height: 30,
+          height: 100,
+        ),
+        Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: <Widget>[
+            Divider(
+              color: Colors.white,
+              endIndent: MediaQuery.of(context).size.width * 0.60,
+            ),
+            Center(
+              child: Text(
+                "data",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            Divider(
+              color: Colors.white,
+              indent: MediaQuery.of(context).size.width * 0.60,
+            ),
+          ],
         ),
         FlatButton(
           shape: new RoundedRectangleBorder(
